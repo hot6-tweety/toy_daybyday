@@ -3,6 +3,10 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+// local.properties 에 Api Key 등 숨긴 정보 사용을 위함
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
 android {
     namespace 'com.tweety.daybyday'
     compileSdk 33
@@ -15,6 +19,13 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // url 변수 지정
+        buildConfigField "String", "URL_WEATHER", properties['url.weather']
+        // api key 변수 지정
+        buildConfigField "String", "API_KEY", properties['api.key']
+        // kakao map rest api key 변수 지정
+        buildConfigField "String", "KAKAO_MAP_REST_API_KEY", properties['kakao.map.rest.api.key']
     }
 
     buildTypes {
@@ -32,7 +43,7 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true
+        dataBinding = true
     }
 }
 
@@ -45,4 +56,23 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+
+    // retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    // okhttp3
+    implementation platform("com.squareup.okhttp3:okhttp-bom:4.9.0")
+    implementation "com.squareup.okhttp3:okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor"
+
+    // viewpager
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+
+    // 위치
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+
+
 }

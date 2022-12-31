@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">daybyday</string>
+
+    <!--  오늘  -->
+    <string name="today">오늘</string>
+    <!--  요일  -->
+    <string name="monday">월요일</string>
+    <string name="tuesday">화요일</string>
+    <string name="wednesday">수요일</string>
+    <string name="thursday">목요일</string>
+    <string name="friday">금요일</string>
+    <string name="saturday">토요일</string>
+    <string name="sunday">일요일</string>
+
 </resources>
