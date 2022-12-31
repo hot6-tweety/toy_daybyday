@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/bg_weather_banner"
+        android:layout_width="336dp"
+        android:layout_height="260dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/background_blue_gradient"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/bg_weather_head"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="12dp"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/background_black_a60_r12"
+        app:layout_constraintBottom_toTopOf="@id/bg_weather_day_list"
+        app:layout_constraintEnd_toEndOf="@id/bg_weather_banner"
+        app:layout_constraintStart_toStartOf="@id/bg_weather_banner"
+        app:layout_constraintTop_toTopOf="@id/bg_weather_banner"
+
+        />
+
+    <View
+        android:id="@+id/bg_weather_day_list"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/background_white_a20_r12"
+        app:layout_constraintBottom_toBottomOf="@id/bg_weather_banner"
+        app:layout_constraintEnd_toEndOf="@id/bg_weather_head"
+        app:layout_constraintStart_toStartOf="@id/bg_weather_head" />
+
+    <TextView
+        android:id="@+id/tv_day"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_black_gradient"
+        android:gravity="center"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/bg_weather_day_list"
+        app:layout_constraintStart_toStartOf="@id/bg_weather_day_list"
+        app:layout_constraintTop_toTopOf="@id/bg_weather_day_list"
+        tools:text="월요일" />
+
+    <ImageView
+        android:id="@+id/iv_banner_weather"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_banner_weather_state"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bg_weather_banner"
+        app:layout_constraintStart_toStartOf="@id/bg_weather_banner"
+        app:layout_constraintTop_toTopOf="@id/bg_weather_banner"
+        tools:background="@drawable/ic_cloudy" />
+
+    <TextView
+        android:id="@+id/tv_banner_weather_state"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_banner_weather"
+        app:layout_constraintEnd_toStartOf="@+id/tv_banner_temperature"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_banner_weather"
+        app:layout_constraintTop_toTopOf="@id/iv_banner_weather"
+        tools:text="흐림" />
+
+    <TextView
+        android:id="@+id/tv_banner_temperature"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="12dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tv_banner_weather_state"
+        app:layout_constraintEnd_toEndOf="@id/bg_weather_banner"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_banner_weather_state"
+        app:layout_constraintTop_toTopOf="@id/tv_banner_weather_state"
+        tools:text="36℃" />
+
+    <ImageView
+        android:id="@+id/iv_weather_one"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="@id/bg_weather_day_list"
+        app:layout_constraintTop_toBottomOf="@id/tv_day"
+        tools:background="@drawable/ic_cloudy" />
+
+    <ImageView
+        android:id="@+id/iv_weather_two"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_weather_one"
+        app:layout_constraintStart_toEndOf="@id/iv_weather_one"
+        tools:background="@drawable/ic_cloudy" />
+
+    <ImageView
+        android:id="@+id/iv_weather_three"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_weather_one"
+        app:layout_constraintStart_toEndOf="@id/iv_weather_two"
+        tools:background="@drawable/ic_cloudy" />
+
+    <ImageView
+        android:id="@+id/iv_weather_four"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_weather_one"
+        app:layout_constraintStart_toEndOf="@id/iv_weather_three"
+        tools:background="@drawable/ic_cloudy" />
+
+    <TextView
+        android:id="@+id/tv_weather_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/iv_weather_one"
+        app:layout_constraintStart_toStartOf="@id/iv_weather_one"
+        app:layout_constraintTop_toBottomOf="@id/iv_weather_one"
+        tools:text="흐림" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/tv_weather_one"
+        app:layout_constraintStart_toStartOf="@id/tv_weather_one"
+        app:layout_constraintTop_toBottomOf="@id/tv_weather_one"
+        tools:text="06:00" />
+
+    <TextView
+        android:id="@+id/tv_tv_weather_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/iv_weather_two"
+        app:layout_constraintStart_toStartOf="@id/iv_weather_two"
+        app:layout_constraintTop_toBottomOf="@id/iv_weather_two"
+        tools:text="흐림" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/tv_tv_weather_two"
+        app:layout_constraintStart_toStartOf="@id/tv_tv_weather_two"
+        app:layout_constraintTop_toBottomOf="@id/tv_tv_weather_two"
+        tools:text="12:00" />
+
+    <TextView
+        android:id="@+id/tv_weather_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/iv_weather_three"
+        app:layout_constraintStart_toStartOf="@id/iv_weather_three"
+        app:layout_constraintTop_toBottomOf="@id/iv_weather_three"
+        tools:text="흐림" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/tv_weather_three"
+        app:layout_constraintStart_toStartOf="@id/tv_weather_three"
+        app:layout_constraintTop_toBottomOf="@id/tv_weather_three"
+        tools:text="18:00" />
+
+    <TextView
+        android:id="@+id/tv_weather_four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/iv_weather_four"
+        app:layout_constraintStart_toStartOf="@id/iv_weather_four"
+        app:layout_constraintTop_toBottomOf="@id/iv_weather_four"
+        tools:text="흐림" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/tv_weather_four"
+        app:layout_constraintStart_toStartOf="@id/tv_weather_four"
+        app:layout_constraintTop_toBottomOf="@id/tv_weather_four"
+        tools:text="12:00"
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
